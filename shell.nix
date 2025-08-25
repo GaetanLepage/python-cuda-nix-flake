@@ -1,5 +1,10 @@
 {
-  pkgs ? import <nixpkgs> { },
+  pkgs ? import <nixpkgs> {
+    config = {
+      cudaSupport = true;
+      allowUnfree = true;
+    };
+  },
 }:
 pkgs.mkShell {
   packages = [

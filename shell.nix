@@ -26,7 +26,9 @@ pkgs.mkShell {
       pp.jax
       pp.torch-bin
 
-      pp.mpi4py
+      # Currently broken (several tests fail + the checkPhase hangs forever)
+      # TODO: uncomment when the package will be fixed
+      # pp.mpi4py
 
       # for jupyter notebook (basics, for more advanced use jupyenv)
       pp.ipython

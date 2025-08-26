@@ -26,9 +26,10 @@ pkgs.mkShell {
       pp.jax
       pp.torch-bin
 
-      # Currently broken (several tests fail + the checkPhase hangs forever)
-      # TODO: uncomment when the package will be fixed
-      # pp.mpi4py
+      (pp.mpi4py.overridePythonAttrs {
+        # Some tests are failing
+        doCheck = false;
+      })
 
       # for jupyter notebook (basics, for more advanced use jupyenv)
       pp.ipython

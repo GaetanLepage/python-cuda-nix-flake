@@ -23,7 +23,10 @@ pkgs.mkShell {
       pp.ray
       pp.cupy
 
-      pp.jax
+      (pp.jax.overridePythonAttrs {
+        # Tests are expensive to run
+        doCheck = false;
+      })
       pp.torch-bin
 
       (pp.mpi4py.overridePythonAttrs {

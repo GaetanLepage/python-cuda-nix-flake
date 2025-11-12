@@ -1,7 +1,7 @@
 {
   description = "Python + CUDA dev environment";
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable-small";
 
   nixConfig = {
     extra-substituters = [

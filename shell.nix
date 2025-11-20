@@ -23,16 +23,9 @@ pkgs.mkShell {
       pp.ray
       pp.cupy
 
-      (pp.jax.overridePythonAttrs {
-        # Tests are expensive to run
-        doCheck = false;
-      })
+      pp.jax
+      pp.mpi4py
       pp.torch-bin
-
-      (pp.mpi4py.overridePythonAttrs {
-        # Some tests are failing
-        doCheck = false;
-      })
 
       # for jupyter notebook (basics, for more advanced use jupyenv)
       pp.ipython

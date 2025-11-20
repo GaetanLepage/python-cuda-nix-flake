@@ -13,29 +13,31 @@ pkgs.mkShell {
     pkgs.gcc
 
     # for jupyter notebook (basics, for more advanced use jupyenv)
-    (pkgs.python312.withPackages (pp: [
-      pp.dask
-      pp.distributed
-      pp.numpy
+    (pkgs.python312.withPackages (
+      pp: with pp; [
+        dask
+        distributed
+        numpy
 
-      pp.numba
+        numba
 
-      pp.ray
-      pp.cupy
+        ray
+        cupy
 
-      pp.jax
-      pp.mpi4py
-      pp.torch-bin
+        jax
+        mpi4py
+        torch-bin
 
-      # for jupyter notebook (basics, for more advanced use jupyenv)
-      pp.ipython
-      pp.jupyter
+        # for jupyter notebook (basics, for more advanced use jupyenv)
+        ipython
+        jupyter
 
-      pp.pillow
-      pp.tqdm
-      pp.ipywidgets
-      pp.imageio
-      pp.matplotlib
-    ]))
+        pillow
+        tqdm
+        ipywidgets
+        imageio
+        matplotlib
+      ]
+    ))
   ];
 }
